@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -11,48 +12,54 @@ import { AnimatedTestimonialsDemo } from "./components/acternity/card"
 import { CometCardDemo } from "./components/3dcard";
 const App = () => {
   return (
-    <div>
-      <Navbar />
+    <Router>
+      <div>
+        <Navbar />
 
-      <main>
-        <div className="   " id="home">
-          <Home />
-        </div>
+        <Routes>
+          <Route path="/" element={
+            <main>
+              <div className="   " id="home">
+                <Home />
+              </div>
 
-        <div className="   pt-[25px] md:pt-[100px]" id="about">
-          <About />
-        </div>
+              <div className="   pt-[25px] md:pt-[100px]" id="about">
+                <About />
+              </div>
 
-        <div className="   pt-[25px] md:pt-[100px]" id="blog">
-          <Blogs />
-        </div>
-        <div className="   pt-[25px] md:pt-[100px]">
-<AnimatedTestimonialsDemo/>
-        </div>
+              <div className="   pt-[25px] md:pt-[100px]" id="blog">
+                <Blogs />
+              </div>
+              <div className="   pt-[25px] md:pt-[100px]">
+                <AnimatedTestimonialsDemo/>
+              </div>
 
-        <div className="   pt-[25px] md:pt-[100px]" id="services">
-          <Services />
-        </div>
-        <div className="   pt-[25px] md:pt-[100px]">
-          <Counter />
-        </div>
+              <div className="   pt-[25px] md:pt-[100px]" id="services">
+                <Services />
+              </div>
+              <div className="   pt-[25px] md:pt-[100px]">
+                <Counter />
+              </div>
 
-        <div  className="   pt-[25px] md:pt-[100px]" id="doctors">
-          <Doctors />
-        </div>
-{/* <div className="flex flex-wrap justify-center gap-5 p-4">
-  <CometCardDemo/>
-  <CometCardDemo/>
-  <CometCardDemo/>
-    <CometCardDemo/>
-</div>
- */}
+              <div  className="   pt-[25px] md:pt-[100px]" id="doctors">
+                <Doctors />
+              </div>
+              {/* <div className="flex flex-wrap justify-center gap-5 p-4">
+                <CometCardDemo/>
+                <CometCardDemo/>
+                <CometCardDemo/>
+                  <CometCardDemo/>
+              </div>
+               */}
 
-     
-      </main>
+           
+            </main>
+          } />
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

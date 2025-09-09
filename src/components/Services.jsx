@@ -8,9 +8,9 @@ const Services = () => {
         {/* Main Title - Centered */}
         <div className="text-center mb-12 lg:mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-light text-gray-800 leading-tight">
-            Mellow: Your Gateway
+            CAM Designs: Your Gateway
             <br />
-            <span className="text-blue-600">To Serenity</span>
+            <span className="text-orange-400">To Beautiful Spaces</span>
           </h1>
         </div>
 
@@ -19,10 +19,11 @@ const Services = () => {
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
             <p className="text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed">
-              Welcome to Hotel Mellow, where comfort meets tranquility. Nestled in
-              the heart of a bustling city, our hotel offers a peaceful retreat for both
-              business and leisure travelers. With modern amenities, and a warm,
-              inviting atmosphere, we strive to make your stay with us.
+              Welcome to CAM Designs, where creativity meets functionality. We specialize in 
+              transforming spaces through innovative interior and exterior design solutions. 
+              From modern residential projects to commercial spaces, our team brings 
+              expertise in creating beautiful, functional environments that reflect your 
+              unique vision and lifestyle.
             </p>
             <a 
               href="#about" 
@@ -43,12 +44,12 @@ const Services = () => {
           {/* Right Content - Images Grid */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 h-80 sm:h-96 lg:h-[28rem] xl:h-[32rem]">
-              {/* Large Pool Image - Bottom Left (spans 2 rows) */}
+              {/* Large Exterior Design Image - Bottom Left (spans 2 rows) */}
               <div className="row-span-2 col-span-1">
                 <div className="relative h-full rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500">
                   <img 
                     src={Wall2} 
-                    alt="Hotel pool area with modern bungalows" 
+                    alt="Modern exterior design with contemporary architecture" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
@@ -60,19 +61,19 @@ const Services = () => {
                 <div className="relative h-full rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500">
                   <img 
                     src={BedRoom} 
-                    alt="Luxurious hotel bedroom" 
+                    alt="Elegant bedroom interior design" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                 </div>
               </div>
               
-              {/* Relaxation Image - Bottom Right */}
+              {/* Living Room Interior Design Image - Bottom Right */}
               <div className="col-span-1">
                 <div className="relative h-full rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500">
                   <img 
                     src={Livingroom1} 
-                    alt="Relaxing hotel room with breakfast" 
+                    alt="Modern living room interior design" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>

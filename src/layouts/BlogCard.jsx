@@ -1,4 +1,6 @@
-const BlogCard = ({ img, headlines, description }) => {
+import PropTypes from 'prop-types';
+
+const BlogCard = ({ img, headlines, description, category, onViewDesign }) => {
   return (
     <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out overflow-hidden cursor-pointer hover:-translate-y-2 max-w-sm">
       {/* Image Container */}
@@ -33,12 +35,15 @@ const BlogCard = ({ img, headlines, description }) => {
         
         {/* Read More Button */}
         <div className="pt-2">
-          <span className="inline-flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300">
+          <button 
+            onClick={() => onViewDesign(category)}
+            className="inline-flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors duration-300 hover:underline"
+          >
             View Design
             <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </span>
+          </button>
         </div>
       </div>
 
@@ -46,6 +51,14 @@ const BlogCard = ({ img, headlines, description }) => {
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     </div>
   );
+};
+
+BlogCard.propTypes = {
+  img: PropTypes.string.isRequired,
+  headlines: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  onViewDesign: PropTypes.func.isRequired
 };
 
 export default BlogCard;
