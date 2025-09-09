@@ -5,22 +5,22 @@ const About = () => {
       <div className=" w-full lg:w-3/4 space-y-4">
         <h1 className=" text-4xl font-semibold text-center lg:text-start">About Us</h1>
         <p className=" text-justify lg:text-start">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-          labore rerum tempore tenetur commodi natus quos itaque voluptatum
-          repudiandae nostrum accusantium vero voluptate aspernatur totam,
-          laboriosam aut, et quae consequatur?
+          We are passionate interior designers dedicated to transforming your living 
+          spaces into beautiful, functional, and inspiring environments. Our team 
+          combines creativity with practical design solutions to create spaces that 
+          reflect your unique personality and lifestyle needs.
         </p>
         <p className="text-justify lg:text-start">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora quia
-          suscipit illum, numquam incidunt nostrum dolor officia doloremque
-          cupiditate, placeat explicabo sed iure atque neque quidem ipsam!
-          Dolor, minus reiciendis.
+          With years of experience in residential and commercial interior design, 
+          we specialize in modern, contemporary, and traditional design styles. 
+          From concept to completion, we work closely with our clients to ensure 
+          every detail meets their vision and exceeds their expectations.
         </p>
         <p className="text-justify lg:text-start">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, illum.
-          Accusantium ab expedita veniam nobis aut, in rerum repellendus!
-          Exercitationem libero recusandae corrupti accusantium reiciendis in
-          placeat illo maxime ea.
+          Our comprehensive services include space planning, color consultation, 
+          furniture selection, lighting design, and project management. We believe 
+          that great design should not only look beautiful but also enhance your 
+          daily life and bring joy to your home or workspace.
         </p>
       </div>
       <div className=" w-full lg:w-3/4">

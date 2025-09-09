@@ -2,36 +2,53 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
+import Counter from "./components/couter";
 import Services from "./components/Services";
 import Doctors from "./components/Doctors";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
-
+import { AnimatedTestimonialsDemo } from "./components/acternity/card"
+import { CometCardDemo } from "./components/3dcard";
 const App = () => {
   return (
     <div>
       <Navbar />
 
       <main>
-        <div id="home">
+        <div className="   " id="home">
           <Home />
         </div>
 
-        <div id="about">
+        <div className="   pt-[25px] md:pt-[100px]" id="about">
           <About />
         </div>
 
-        <div id="services">
-          <Services />
-        </div>
-
-        <div id="doctors">
-          <Doctors />
-        </div>
-
-        <div id="blog">
+        <div className="   pt-[25px] md:pt-[100px]" id="blog">
           <Blogs />
         </div>
+        <div className="   pt-[25px] md:pt-[100px]">
+<AnimatedTestimonialsDemo/>
+        </div>
+
+        <div className="   pt-[25px] md:pt-[100px]" id="services">
+          <Services />
+        </div>
+        <div className="   pt-[25px] md:pt-[100px]">
+          <Counter />
+        </div>
+
+        <div  className="   pt-[25px] md:pt-[100px]" id="doctors">
+          <Doctors />
+        </div>
+{/* <div className="flex flex-wrap justify-center gap-5 p-4">
+  <CometCardDemo/>
+  <CometCardDemo/>
+  <CometCardDemo/>
+    <CometCardDemo/>
+</div>
+ */}
+
+     
       </main>
 
       <Footer />

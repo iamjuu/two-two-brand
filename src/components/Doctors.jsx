@@ -80,7 +80,7 @@ const Doctors = () => {
   };
 
   return (
-    <div className=" min-h-screen flex flex-col justify-center lg:px-32 px-5 pt-16">
+    <div className=" py-[130px] flex flex-col  lg:px-32 px-5">
       <div className=" flex flex-col items-center lg:flex-row justify-between mb-10 lg:mb-0">
         <div>
           <h1 className=" text-4xl font-semibold text-center lg:text-start">
