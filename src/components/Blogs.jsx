@@ -1,12 +1,66 @@
 import BlogCard from "../layouts/BlogCard";
-import img1 from "../assets/images/bedroom1.jpg";
-import img2 from "../assets/images/livingroom.jpg";
-import img3 from "../assets/images/livingroom1.jpg";
-import img4 from "../assets/images/Hall1.jpg";
-import img5 from "../assets/images/hall2.jpg";
-import img6 from "../assets/images/officeroom.jpg";
+import DesignModal from "./DesignModal";
+import { useDesignModal } from "../hooks/useDesignModal";
+import { 
+  BathroomImage1,
+  BedroomImage1,
+  KitchenImage1,
+  LivingRoomImage1,
+  ExteriorImage1,
+  CourtyardImage1,
+  BathroomImage2, BathroomImage3,
+  BedroomImage2, BedroomImage3, BedroomImage4, BedroomImage5, BedroomImage6, BedroomImage7,
+  KitchenImage2, KitchenImage3,
+  LivingRoomImage2, LivingRoomImage3,
+  ExteriorImage2, ExteriorImage3, ExteriorImage4, ExteriorImage5, ExteriorImage6, ExteriorImage7, ExteriorImage8, ExteriorImage9, ExteriorImage10, ExteriorImage11, ExteriorImage12, ExteriorImage13, ExteriorImage14, ExteriorImage15, ExteriorImage16, ExteriorImage17, ExteriorImage18, ExteriorImage19, ExteriorImage20, ExteriorImage21,
+  CourtyardImage2, CourtyardImage3, CourtyardImage4,
+  DiningImage1, DiningImage2, DiningImage3,
+  DressingImage1, DressingImage2, DressingImage3, DressingImage4, DressingImage5,
+  StaircaseImage1, StaircaseImage2,
+  CommercialImage1, CommercialImage2, CommercialImage3,
+  CafeImage1, CafeImage2
+} from "../assets";
 
 const Blogs = () => {
+  const { isModalOpen, selectedCategory, openModal, closeModal } = useDesignModal();
+
+  // Define image collections for each category
+  const imageCollections = {
+    bedroom: {
+      images: [BedroomImage1, BedroomImage2, BedroomImage3, BedroomImage4, BedroomImage5, BedroomImage6, BedroomImage7]
+    },
+    livingroom: {
+      images: [LivingRoomImage1, LivingRoomImage2, LivingRoomImage3]
+    },
+    kitchen: {
+      images: [KitchenImage1, KitchenImage2, KitchenImage3]
+    },
+    bathroom: {
+      images: [BathroomImage1, BathroomImage2, BathroomImage3]
+    },
+    exterior: {
+      images: [ExteriorImage1, ExteriorImage2, ExteriorImage3, ExteriorImage4, ExteriorImage5, ExteriorImage6, ExteriorImage7, ExteriorImage8, ExteriorImage9, ExteriorImage10, ExteriorImage11, ExteriorImage12, ExteriorImage13, ExteriorImage14, ExteriorImage15, ExteriorImage16, ExteriorImage17, ExteriorImage18, ExteriorImage19, ExteriorImage20, ExteriorImage21]
+    },
+    courtyard: {
+      images: [CourtyardImage1, CourtyardImage2, CourtyardImage3, CourtyardImage4]
+    },
+    dining: {
+      images: [DiningImage1, DiningImage2, DiningImage3]
+    },
+    dressing: {
+      images: [DressingImage1, DressingImage2, DressingImage3, DressingImage4, DressingImage5]
+    },
+    staircase: {
+      images: [StaircaseImage1, StaircaseImage2]
+    },
+    commercial: {
+      images: [CommercialImage1, CommercialImage2, CommercialImage3]
+    },
+    cafe: {
+      images: [CafeImage1, CafeImage2]
+    }
+  };
+
   return (
     <div className=" min-h-screen flex flex-col x lg:px-32 px-5 ">
       <div className=" flex flex-col items-center lg:flex-row justify-between">
@@ -23,37 +77,57 @@ const Blogs = () => {
       <div className=" my-8">
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           <BlogCard 
-            img={img1} 
+            img={BedroomImage1} 
             headlines="Modern Bedroom Design" 
             description="Transform your bedroom into a serene sanctuary with contemporary design elements and calming aesthetics."
+            category="bedroom"
+            onViewDesign={openModal}
           />
           <BlogCard 
-            img={img2} 
+            img={LivingRoomImage1} 
             headlines="Elegant Living Room" 
             description="Create a sophisticated living space that combines comfort with style for the perfect family gathering area."
+            category="livingroom"
+            onViewDesign={openModal}
           />
           <BlogCard
-            img={img3}
-            headlines="Luxury Living Spaces"
-            description="Discover how to elevate your home with premium materials and thoughtful design details."
+            img={KitchenImage1}
+            headlines="Modern Kitchen Design"
+            description="Discover how to elevate your kitchen with premium materials and thoughtful design details."
+            category="kitchen"
+            onViewDesign={openModal}
           />
           <BlogCard 
-            img={img4} 
-            headlines="Grand Hall Design" 
-            description="Make a stunning first impression with an impressive hall design that reflects your personal style."
+            img={BathroomImage1} 
+            headlines="Luxury Bathroom" 
+            description="Make a stunning impression with an impressive bathroom design that reflects your personal style."
+            category="bathroom"
+            onViewDesign={openModal}
           />
           <BlogCard 
-            img={img5} 
-            headlines="Contemporary Hallway" 
-            description="Design a functional and beautiful hallway that seamlessly connects your home's living spaces."
+            img={ExteriorImage1} 
+            headlines="Exterior Design" 
+            description="Design a functional and beautiful exterior that seamlessly connects with your home's architecture."
+            category="exterior"
+            onViewDesign={openModal}
           />
           <BlogCard 
-            img={img6} 
-            headlines="Professional Office Space" 
-            description="Create a productive workspace that inspires creativity and enhances your work-from-home experience."
+            img={CourtyardImage1} 
+            headlines="Courtyard Design" 
+            description="Create a beautiful outdoor space that inspires relaxation and enhances your home experience."
+            category="courtyard"
+            onViewDesign={openModal}
           />
         </div>
       </div>
+
+      {/* Design Modal */}
+      <DesignModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        category={selectedCategory}
+        imageCollections={imageCollections}
+      />
     </div>
   );
 };
