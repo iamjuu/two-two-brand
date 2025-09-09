@@ -26,7 +26,7 @@ const Blogs = () => {
         </div>
       </div>
       <div className=" my-8">
-        <div className=" flex flex-wrap justify-center gap-5">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center">
           <BlogCard img={img1} headlines="Unraveling the Mysteries of Sleep" />
           <BlogCard img={img2} headlines="The Heart-Healthy Diet" />
           <BlogCard

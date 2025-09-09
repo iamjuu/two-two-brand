@@ -8,6 +8,11 @@ export default {
         brightColor: "#dd8036",
         backgroundColor: "#36ae9a",
       },
+      fontFamily: {
+        'manrope': ['Manrope', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'sans': ['Montserrat', 'Manrope', 'sans-serif'],
+      },
     },
   },
   plugins: [],

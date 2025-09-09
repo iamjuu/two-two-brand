@@ -4,7 +4,8 @@ import { RiMicroscopeLine } from "react-icons/ri";
 import ServicesCard from "../layouts/ServicesCard";
 import { MdHealthAndSafety } from "react-icons/md";
 import { FaHeartbeat } from "react-icons/fa";
-
+ import {Livingroom1,Livingroom2,Wall2}  from "../assets"
+ 
 const Services = () => {
   const icon1 = (
     <RiMicroscopeLine size={35} className=" text-backgroundColor" />
@@ -31,9 +32,9 @@ const Services = () => {
         </div>
       </div>
       <div className=" flex flex-col lg:flex-row gap-5 pt-14">
-        <ServicesCard icon={icon1} title="Lab Test" />
-        <ServicesCard icon={icon2} title="Health Check" />
-        <ServicesCard icon={icon3} title="Heart Health" />
+        <ServicesCard  image={Livingroom1} icon={icon1} title="Lab Test" />
+        <ServicesCard  image={Wall2}  icon={icon2} title="Health Check" />
+        <ServicesCard  image={Livingroom2} icon={icon3} title="Heart Health" />
       </div>
     </div>
   );
