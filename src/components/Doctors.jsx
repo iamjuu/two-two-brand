@@ -4,38 +4,39 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
+import { Hall1, hall2, Livingroom1, Wall1, Wall2, Wall3 } from "../assets";
 
 const Doctors = () => {
   const data = [
     {
-      img: "/src/assets/img/doc1.jpg",
-      name: "Dr. Serena Mitchell",
-      specialties: "Orthopedic Surgeon",
+      img: Wall1,
+      name: "Dr. Sarah Williams",
+      specialties: "Interior Design Specialist",
     },
     {
-      img: "/src/assets/img/doc2.jpg",
-      name: "Dr. Julian Bennett",
-      specialties: "Cardiologist",
+      img: Wall2,
+      name: "Dr. Michael Chen",
+      specialties: "Space Planning Expert",
     },
     {
-      img: "/src/assets/img/doc3.jpg",
-      name: "Dr. Camila Rodriguez",
-      specialties: "Pediatrician",
+      img: Wall3,
+      name: "Dr. Emma Thompson",
+      specialties: "Color & Texture Consultant",
     },
     {
-      img: "/src/assets/img/doc4.jpg",
-      name: "Dr. Victor Nguyen",
-      specialties: "Neurologist",
+      img: Hall1,
+      name: "Dr. James Rodriguez",
+      specialties: "Lighting Design Professional",
     },
     {
-      img: "/src/assets/img/doc5.jpg",
-      name: "Dr. Ethan Carter",
-      specialties: "Dermatologist",
+      img: hall2,
+      name: "Dr. Lisa Anderson",
+      specialties: "Furniture & Decor Specialist",
     },
     {
-      img: "/src/assets/img/doc6.jpg",
-      name: "Dr. Olivia Martinez",
-      specialties: "Ophthalmologist",
+      img: Livingroom1,
+      name: "Dr. David Park",
+      specialties: "Modern Interior Architect",
     },
   ];
 
@@ -83,25 +84,24 @@ const Doctors = () => {
       <div className=" flex flex-col items-center lg:flex-row justify-between mb-10 lg:mb-0">
         <div>
           <h1 className=" text-4xl font-semibold text-center lg:text-start">
-            Our Doctors
+            Our Interior Design Experts
           </h1>
           <p className=" mt-2 text-center lg:text-start">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,
-            quidem.
+            Meet our talented team of interior design professionals who transform spaces into beautiful, functional environments.
           </p>
         </div>
         <div className="flex gap-5 mt-4 lg:mt-0">
           <button
-            className=" bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
+            className="border border-gray-300 font-[200] text-black  p-3 rounded-full"
             onClick={() => slider.current.slickPrev()}
           >
-            <FaArrowLeft size={25} />
+            <FaArrowLeft size={20} />
           </button>
           <button
-            className=" bg-[#d5f2ec] text-backgroundColor px-4 py-2 rounded-lg active:bg-[#ade9dc]"
+            className="border border-gray-300 font-[200] text-black  p-3 rounded-full"
             onClick={() => slider.current.slickNext()}
           >
-            <FaArrowRight size={25} />
+            <FaArrowRight size={20} />
           </button>
         </div>
       </div>
@@ -109,20 +109,22 @@ const Doctors = () => {
         <Slider ref={slider} {...settings}>
           {data.map((e, index) => (
             <div
-              className="h-[350px] text-black rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mb-2 cursor-pointer"
+              className="h-[380px] text-black rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mb-2 cursor-pointer hover:shadow-[rgba(0,_0,_0,_0.35)_0px_5px_15px] transition-all duration-300 bg-white"
               key={index}
             >
-              <div>
+              <div className="relative overflow-hidden">
                 <img
                   src={e.img}
-                  alt="img"
-                  className=" h-56 rounded-t-xl w-full"
+                  alt="Interior design showcase"
+                  className=" h-56 rounded-t-xl w-full object-cover hover:scale-105 transition-transform duration-300"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-t-xl"></div>
               </div>
 
-              <div className=" flex flex-col justify-center items-center">
-                <h1 className=" font-semibold text-xl pt-4">{e.name}</h1>
-                <h3 className=" pt-2">{e.specialties}</h3>
+              <div className=" flex flex-col justify-center items-center p-4">
+                <h1 className=" font-semibold text-xl pt-2 text-gray-800">{e.name}</h1>
+                <h3 className=" pt-2 text-gray-600 text-center text-sm font-medium">{e.specialties}</h3>
+                <div className="mt-3 w-12 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
               </div>
             </div>
           ))}

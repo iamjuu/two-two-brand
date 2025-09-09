@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Montserrat Font Face Declarations */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./components/font/Cinzel,DM_Sans,Inter,Manrope,Montserrat,etc (3)/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./components/font/Cinzel,DM_Sans,Inter,Manrope,Montserrat,etc (3)/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +24,7 @@
 
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', 'Manrope', sans-serif;
 }
 
 .slick-slide > div {
