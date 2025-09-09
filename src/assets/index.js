@@ -7,5 +7,7 @@ import hall2 from "./images/hall2.jpg"
 import Livingroom1 from "./images/livingroom.jpg"
 import Livingroom2 from "./images/livingroom1.jpg"
 import BedRoom from './images/bedroom1.jpg'
+import LogoBack from "../assets/images/logoblack.png"
+import LogoWhite from "../assets/images/logowhite.jpg"
 
-export {BedRoom,MainBackground, Wall1, Wall2, Wall3, Hall1, hall2, Livingroom1, Livingroom2}
+export {LogoBack,LogoWhite,BedRoom,MainBackground, Wall1, Wall2, Wall3, Hall1, hall2, Livingroom1, Livingroom2}
