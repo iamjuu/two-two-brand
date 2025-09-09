@@ -1,6 +1,8 @@
 import BlogCard from "../layouts/BlogCard";
 import DesignModal from "./DesignModal";
 import { useDesignModal } from "../hooks/useDesignModal";
+import { useState, useEffect } from "react";
+import { ShimmerTitle, ShimmerText, ShimmerGrid } from "./Shimmer";
 import { 
   BathroomImage1,
   BedroomImage1,
@@ -23,6 +25,16 @@ import {
 
 const Blogs = () => {
   const { isModalOpen, selectedCategory, openModal, closeModal } = useDesignModal();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Define image collections for each category
   const imageCollections = {
@@ -65,60 +77,73 @@ const Blogs = () => {
     <div className=" min-h-screen flex flex-col x lg:px-32 px-5 ">
       <div className=" flex flex-col items-center lg:flex-row justify-between">
         <div>
-          <h1 className=" text-4xl font-semibold text-center lg:text-start">
-            Our Designs
-          </h1>
-          <p className=" mt-2 text-center lg:text-start">
-            Discover our latest interior design projects and creative solutions that transform spaces into beautiful, functional environments tailored to your lifestyle.
-          </p>
+          {isLoading ? (
+            <>
+              <ShimmerTitle className="h-10 w-48 mb-4" />
+              <ShimmerText lines={2} />
+            </>
+          ) : (
+            <>
+              <h1 className=" text-4xl font-semibold text-center lg:text-start">
+                Our Designs
+              </h1>
+              <p className=" mt-2 text-center lg:text-start">
+                Discover our latest interior design projects and creative solutions that transform spaces into beautiful, functional environments tailored to your lifestyle.
+              </p>
+            </>
+          )}
         </div>
 
       </div>
       <div className=" my-8">
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          <BlogCard 
-            img={BedroomImage1} 
-            headlines="Modern Bedroom Design" 
-            description="Transform your bedroom into a serene sanctuary with contemporary design elements and calming aesthetics."
-            category="bedroom"
-            onViewDesign={openModal}
-          />
-          <BlogCard 
-            img={LivingRoomImage1} 
-            headlines="Elegant Living Room" 
-            description="Create a sophisticated living space that combines comfort with style for the perfect family gathering area."
-            category="livingroom"
-            onViewDesign={openModal}
-          />
-          <BlogCard
-            img={KitchenImage1}
-            headlines="Modern Kitchen Design"
-            description="Discover how to elevate your kitchen with premium materials and thoughtful design details."
-            category="kitchen"
-            onViewDesign={openModal}
-          />
-          <BlogCard 
-            img={BathroomImage1} 
-            headlines="Luxury Bathroom" 
-            description="Make a stunning impression with an impressive bathroom design that reflects your personal style."
-            category="bathroom"
-            onViewDesign={openModal}
-          />
-          <BlogCard 
-            img={ExteriorImage1} 
-            headlines="Exterior Design" 
-            description="Design a functional and beautiful exterior that seamlessly connects with your home's architecture."
-            category="exterior"
-            onViewDesign={openModal}
-          />
-          <BlogCard 
-            img={CourtyardImage1} 
-            headlines="Courtyard Design" 
-            description="Create a beautiful outdoor space that inspires relaxation and enhances your home experience."
-            category="courtyard"
-            onViewDesign={openModal}
-          />
-        </div>
+        {isLoading ? (
+          <ShimmerGrid cols={3} className="justify-items-center" />
+        ) : (
+          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <BlogCard 
+              img={BedroomImage1} 
+              headlines="Modern Bedroom Design" 
+              description="Transform your bedroom into a serene sanctuary with contemporary design elements and calming aesthetics."
+              category="bedroom"
+              onViewDesign={openModal}
+            />
+            <BlogCard 
+              img={LivingRoomImage1} 
+              headlines="Elegant Living Room" 
+              description="Create a sophisticated living space that combines comfort with style for the perfect family gathering area."
+              category="livingroom"
+              onViewDesign={openModal}
+            />
+            <BlogCard
+              img={KitchenImage1}
+              headlines="Modern Kitchen Design"
+              description="Discover how to elevate your kitchen with premium materials and thoughtful design details."
+              category="kitchen"
+              onViewDesign={openModal}
+            />
+            <BlogCard 
+              img={BathroomImage1} 
+              headlines="Luxury Bathroom" 
+              description="Make a stunning impression with an impressive bathroom design that reflects your personal style."
+              category="bathroom"
+              onViewDesign={openModal}
+            />
+            <BlogCard 
+              img={ExteriorImage1} 
+              headlines="Exterior Design" 
+              description="Design a functional and beautiful exterior that seamlessly connects with your home's architecture."
+              category="exterior"
+              onViewDesign={openModal}
+            />
+            <BlogCard 
+              img={CourtyardImage1} 
+              headlines="Courtyard Design" 
+              description="Create a beautiful outdoor space that inspires relaxation and enhances your home experience."
+              category="courtyard"
+              onViewDesign={openModal}
+            />
+          </div>
+        )}
       </div>
 
       {/* Design Modal */}

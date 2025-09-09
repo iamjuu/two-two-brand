@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { ShimmerImage } from './Shimmer';
 
 const ImageModal = ({ isOpen, onClose, images, currentIndex, onNext, onPrev }) => {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
+  useEffect(() => {
+    // Reset loading state when image changes
+    setIsImageLoading(true);
+  }, [currentIndex]);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -18,6 +27,14 @@ const ImageModal = ({ isOpen, onClose, images, currentIndex, onNext, onPrev }) =
       document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose, onNext, onPrev]);
+
+  const handleImageLoad = () => {
+    setIsImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setIsImageLoading(false);
+  };
 
   if (!isOpen) return null;
 
@@ -56,11 +73,27 @@ const ImageModal = ({ isOpen, onClose, images, currentIndex, onNext, onPrev }) =
       )}
 
       {/* Image */}
-      <div className="max-w-xl max-h-[500px] mx-auto px-4">
+      <div className="max-w-xl max-h-[500px] mx-auto px-4 relative">
+        {/* Shimmer Loading Overlay */}
+        {isImageLoading && (
+          <div className="absolute inset-0 z-10">
+            <ShimmerImage 
+              width="w-full" 
+              height="h-[500px]" 
+              className="rounded-lg"
+            />
+          </div>
+        )}
+        
+        {/* Actual Image */}
         <img
           src={images[currentIndex]}
           alt={`Image ${currentIndex + 1}`}
-          className="max-w-full max-h-full object-contain"
+          className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${
+            isImageLoading ? 'opacity-0' : 'opacity-100'
+          }`}
+          onLoad={handleImageLoad}
+          onError={handleImageError}
         />
       </div>
 
@@ -72,6 +105,15 @@ const ImageModal = ({ isOpen, onClose, images, currentIndex, onNext, onPrev }) =
       )}
     </div>
   );
+};
+
+ImageModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currentIndex: PropTypes.number.isRequired,
+  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
 };
 
 export default ImageModal;
