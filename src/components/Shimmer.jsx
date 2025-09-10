@@ -2,7 +2,7 @@ import React from 'react';
 
 const Shimmer = ({ width = 'w-full', height = 'h-64', className = '', rounded = 'rounded-lg' }) => {
   return (
-    <div className={`${width} ${height} ${rounded} ${className} bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse`}>
+    <div className={`${width} ${height} ${rounded} ${className} bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse overflow-hidden`}>
       <div className="w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
     </div>
   );
@@ -10,7 +10,7 @@ const Shimmer = ({ width = 'w-full', height = 'h-64', className = '', rounded = 
 
 // Specific shimmer components for different use cases
 export const ShimmerCard = ({ className = '' }) => (
-  <div className={`bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm ${className}`}>
+  <div className={`bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm w-full ${className}`}>
     <Shimmer height="h-64" rounded="rounded-none" />
     <div className="p-6 space-y-3">
       <Shimmer height="h-6" width="w-3/4" />
@@ -51,7 +51,7 @@ export const ShimmerTitle = ({ className = '' }) => (
 export const ShimmerGrid = ({ cols = 3, className = '' }) => {
   const gridColsClass = cols === 3 ? 'lg:grid-cols-3' : cols === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-4';
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 ${gridColsClass} gap-8 ${className}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 ${gridColsClass} gap-8 w-full overflow-hidden ${className}`}>
       {Array.from({ length: cols }).map((_, index) => (
         <ShimmerCard key={index} />
       ))}

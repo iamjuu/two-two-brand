@@ -26,7 +26,11 @@ const Footer = () => {
       <div className="w-full bg-[#2b2f20] text-white mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
           {/* Company Information */}
-          <div className="sm:col-span-2 lg:col-span-1 xl:col-span-1">
+          <div 
+            className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div className="flex items-center mb-4 sm:mb-6">
               <img src={LogoWhite} alt="Cam Design Logo" className=" w-20" />
             </div>
@@ -54,7 +58,11 @@ const Footer = () => {
           </div>
 
           {/* Service */}
-          <div className="sm:col-span-1 lg:col-span-1 xl:col-span-1">
+          <div 
+            className="sm:col-span-1 lg:col-span-1 xl:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Service</h2>
             <nav className="space-y-2 text-sm">
               <Link to="services" spy={true} smooth={true} duration={500} className="block hover:text-secondary transition-colors py-1">
@@ -79,7 +87,11 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="sm:col-span-1 lg:col-span-1 xl:col-span-1">
+          <div 
+            className="sm:col-span-1 lg:col-span-1 xl:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Cam Design</h2>
             <nav className="space-y-2 text-sm">
               <Link to="about" spy={true} smooth={true} duration={500} className="block hover:text-secondary transition-colors py-1">
@@ -104,7 +116,11 @@ const Footer = () => {
           </div>
 
           {/* Our Social Media */}
-          <div className="sm:col-span-2 lg:col-span-1 xl:col-span-1">
+          <div 
+            className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Our Social Media</h2>
             <nav className="space-y-2 text-sm">
               <a href="https://wa.me/918593074903" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-500 transition-colors duration-300 group py-1">
@@ -135,7 +151,11 @@ const Footer = () => {
           </div>
 
           {/* Join a Newsletter */}
-          <div className="sm:col-span-2 lg:col-span-1 xl:col-span-1">
+          <div 
+            className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             <h1 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Join a Newsletter</h1>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <div>

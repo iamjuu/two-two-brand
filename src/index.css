@@ -25,6 +25,7 @@
 
 body {
   font-family: 'Montserrat', 'Manrope', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
 .slick-slide > div {
@@ -68,5 +69,27 @@ body {
 
 .animate-shimmer {
   animation: shimmer 1.5s infinite;
+}
+
+/* Ensure shimmer elements don't cause overflow */
+.shimmer-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
 }
 

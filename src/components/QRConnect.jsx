@@ -28,12 +28,6 @@ const QRConnect = () => {
       description: 'Visit our website'
     },
     {
-      label: 'Website (Direct)',
-      value: 'https://camdesigns.netlify.app/?utm_source=qr&utm_medium=qr_code',
-      icon: MapPinIcon,
-      description: 'Visit our website directly'
-    },
-    {
       label: 'Phone Call',
       value: 'tel:+918593074903',
       icon: PhoneIcon,
@@ -94,10 +88,14 @@ const QRConnect = () => {
   };
 
   return (
-    <div className="min-h-screen  pt-20 md:pt-32  bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+    <div className="min-h-screen  pt-32  bg-gradient-to-br from-gray-50 to-gray-100 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div 
+          className="text-center mb-16"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div className="flex justify-center mb-6">
             <div className="bg-orange-500 p-4 rounded-full">
               <QrCodeIcon className="h-12 w-12 text-white" />
@@ -114,7 +112,11 @@ const QRConnect = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* QR Code Display */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+          <div 
+            className="bg-white rounded-2xl shadow-xl p-8 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">
               Your QR Code
             </h2>
@@ -168,7 +170,11 @@ const QRConnect = () => {
           </div>
 
           {/* Quick Connect Options */}
-          <div className="space-y-6">
+          <div 
+            className="space-y-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                 Quick Connect Options
@@ -210,7 +216,11 @@ const QRConnect = () => {
             </div>
 
             {/* Custom QR Code */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div 
+              className="bg-white rounded-2xl shadow-xl p-8"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                 Custom QR Code
               </h2>
@@ -263,7 +273,11 @@ const QRConnect = () => {
             </div>
 
             {/* Instructions */}
-            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+            <div 
+              className="bg-blue-50 rounded-2xl p-6 border border-blue-200"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <h3 className="text-lg font-semibold text-blue-900 mb-3">
                 How to Use
               </h3>

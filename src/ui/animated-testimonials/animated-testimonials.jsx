@@ -34,10 +34,10 @@ export const AnimatedTestimonials = ({
   };
   return (
     <div
-      className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+      className="mx-auto max-w-xs px-3 py-8 font-sans antialiased sm:max-w-sm sm:px-4 sm:py-12 md:max-w-4xl md:px-8 md:py-20 lg:px-12">
+      <div className="relative grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 md:gap-20">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-64 w-full sm:h-72 md:h-80">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -81,7 +81,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex flex-col justify-between py-2 sm:py-4">
           <motion.div
             key={active}
             initial={{
@@ -100,13 +100,13 @@ export const AnimatedTestimonials = ({
               duration: 0.2,
               ease: "easeInOut",
             }}>
-            <h3 className="text-2xl font-bold text-black dark:text-white">
+            <h3 className="text-xl font-bold text-black dark:text-white sm:text-2xl">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500">
+            <p className="text-xs text-gray-500 dark:text-neutral-500 sm:text-sm">
               {testimonials[active].designation}
             </p>
-            <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
+            <motion.p className="mt-4 text-sm text-gray-500 dark:text-neutral-300 sm:mt-6 sm:text-base md:mt-8 md:text-lg">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -131,18 +131,18 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex justify-center gap-4 pt-6 sm:pt-8 md:justify-start md:pt-0">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
+              className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800 sm:h-7 sm:w-7">
               <IconArrowLeft
-                className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+                className="h-4 w-4 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400 sm:h-5 sm:w-5" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
+              className="group/button flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800 sm:h-7 sm:w-7">
               <IconArrowRight
-                className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+                className="h-4 w-4 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400 sm:h-5 sm:w-5" />
             </button>
           </div>
         </div>
