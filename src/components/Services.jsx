@@ -17,7 +17,11 @@ const Services = () => {
     <div className="min-h-screen bg-white py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Title - Centered */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div 
+          className="text-center mb-12 lg:mb-16"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           {isLoading ? (
             <div className="space-y-4">
               <ShimmerTitle className="h-16 w-3/4 mx-auto mb-4" />
@@ -35,7 +39,11 @@ const Services = () => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* Left Content */}
-          <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
+          <div 
+            className="flex flex-col justify-center space-y-6 lg:space-y-8"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             {isLoading ? (
               <>
                 <ShimmerText lines={4} />
@@ -69,7 +77,11 @@ const Services = () => {
           </div>
 
           {/* Right Content - Images Grid */}
-          <div className="relative">
+          <div 
+            className="relative"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             {isLoading ? (
               <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 h-80 sm:h-96 lg:h-[28rem] xl:h-[32rem]">
                 <div className="row-span-2 col-span-1">

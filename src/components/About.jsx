@@ -25,20 +25,38 @@ const About = () => {
           </>
         ) : (
           <>
-            <h1 className=" text-4xl font-semibold text-center lg:text-start">About Us</h1>
-            <p className=" text-justify lg:text-start">
+            <h1 
+              className=" text-4xl font-semibold text-center lg:text-start"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              About Us
+            </h1>
+            <p 
+              className=" text-justify lg:text-start"
+              data-aos="slide-up"
+              data-aos-delay="200"
+            >
               We are passionate interior designers dedicated to transforming your living 
               spaces into beautiful, functional, and inspiring environments. Our team 
               combines creativity with practical design solutions to create spaces that 
               reflect your unique personality and lifestyle needs.
             </p>
-            <p className="text-justify lg:text-start">
+            <p 
+              className="text-justify lg:text-start"
+              data-aos="fade"
+              data-aos-delay="300"
+            >
               With years of experience in residential and commercial interior design, 
               we specialize in modern, contemporary, and traditional design styles. 
               From concept to completion, we work closely with our clients to ensure 
               every detail meets their vision and exceeds their expectations.
             </p>
-            <p className="text-justify lg:text-start">
+            <p 
+              className="text-justify lg:text-start"
+              data-aos="slide-down"
+              data-aos-delay="400"
+            >
               Our comprehensive services include space planning, color consultation, 
               furniture selection, lighting design, and project management. We believe 
               that great design should not only look beautiful but also enhance your 
@@ -47,11 +65,22 @@ const About = () => {
           </>
         )}
       </div>
-      <div className=" w-full lg:w-3/4">
+      <div 
+        className=" w-full lg:w-3/4"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
         {isLoading ? (
           <ShimmerImage height="h-80" className="rounded-lg" />
         ) : (
-          <img className=" rounded-lg  " src={Wall1} alt="img" />
+          <img 
+            className=" rounded-lg" 
+            src={Wall1} 
+            alt="img" 
+            data-aos="slide-down"
+            data-aos-delay="600"
+            data-aos-duration="800"
+          />
         )}
       </div>
     </div>
