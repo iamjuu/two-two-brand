@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import Button from "../layouts/Button";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Contact from "../models/Contact";
@@ -13,7 +14,8 @@ const Navbar = () => {
     { name: "Home", to: "home" },
     { name: "About Us", to: "about" },
     { name: "Services", to: "services" },
-    { name: "Blog", to: "blog" }
+    { name: "Blog", to: "blog" },
+    { name: "QR Connect", to: "/qr-connect", isRoute: true }
   ];
 
   const handleChange = () => {
@@ -45,16 +47,26 @@ const Navbar = () => {
 
           <nav className=" hidden lg:flex flex-row items-center text-lg font-medium gap-8">
             {navItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.to}
-                spy={true}
-                smooth={true}
-                duration={500}
-                className="  text-[14px] hover:text-hoverColor transition-all cursor-pointer"
-              >
-                {item.name}
-              </Link>
+              item.isRoute ? (
+                <RouterLink
+                  key={index}
+                  to={item.to}
+                  className="text-[14px] hover:text-hoverColor transition-all cursor-pointer"
+                >
+                  {item.name}
+                </RouterLink>
+              ) : (
+                <Link
+                  key={index}
+                  to={item.to}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="text-[14px] hover:text-hoverColor transition-all cursor-pointer"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -86,17 +98,28 @@ const Navbar = () => {
           } lg:hidden flex flex-col absolute  bg-[#2b2f20] backdrop-blur-md text-white left-0 top-16 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
         >
           {navItems.map((item, index) => (
-            <Link
-              key={index}
-              to={item.to}
-              spy={true}
-              smooth={true}
-              duration={500}
-              className=" hover:text-hoverColor transition-all cursor-pointer"
-              onClick={closeMenu}
-            >
-              {item.name}
-            </Link>
+            item.isRoute ? (
+              <RouterLink
+                key={index}
+                to={item.to}
+                className="hover:text-hoverColor transition-all cursor-pointer"
+                onClick={closeMenu}
+              >
+                {item.name}
+              </RouterLink>
+            ) : (
+              <Link
+                key={index}
+                to={item.to}
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="hover:text-hoverColor transition-all cursor-pointer"
+                onClick={closeMenu}
+              >
+                {item.name}
+              </Link>
+            )
           ))}
 
           <div className=" lg:hidden">
