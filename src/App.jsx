@@ -7,6 +7,7 @@ import Counter from "./components/couter";
 import Services from "./components/Services";
 import Doctors from "./components/Doctors";
 import Blogs from "./components/Blogs";
+import QRConnect from "./components/QRConnect";
 import Footer from "./components/Footer";
 import { AnimatedTestimonialsDemo } from "./components/acternity/card"
 import { CometCardDemo } from "./components/3dcard";
@@ -55,6 +56,7 @@ const App = () => {
            
             </main>
           } />
+          <Route path="/qr-connect" element={<QRConnect />} />
         </Routes>
 
         <Footer />
