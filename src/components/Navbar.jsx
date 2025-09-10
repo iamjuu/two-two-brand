@@ -47,7 +47,7 @@ const Navbar = () => {
                 <img 
                   src={LogoWhite} 
                   alt="Cam Design Logo" 
-                  className="   w-10 md:w-20" 
+                  className="w-8 sm:w-10 md:w-16 lg:w-20" 
                   data-aos="fade-right"
                   data-aos-delay="100"
                 />
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <img 
                   src={LogoWhite} 
                   alt="Cam Design Logo" 
-                  className="w-20" 
+                  className="w-8 sm:w-10 md:w-16 lg:w-20" 
                   data-aos="fade-right"
                   data-aos-delay="100"
                 />
