@@ -10,7 +10,7 @@ import Blogs from "./components/Blogs";
 import QRConnect from "./components/QRConnect";
 import Footer from "./components/Footer";
 import { AnimatedTestimonialsDemo } from "./components/acternity/card"
-import { CometCardDemo } from "./components/3dcard";
+// import { CometCardDemo } from "./components/3dcard";
 const App = () => {
   return (
     <Router>
@@ -45,15 +45,6 @@ const App = () => {
               <div  className="   pt-[25px] md:pt-[100px]" id="doctors">
                 <Doctors />
               </div>
-              {/* <div className="flex flex-wrap justify-center gap-5 p-4">
-                <CometCardDemo/>
-                <CometCardDemo/>
-                <CometCardDemo/>
-                  <CometCardDemo/>
-              </div>
-               */}
-
-           
             </main>
           } />
           <Route path="/qr-connect" element={<QRConnect />} />

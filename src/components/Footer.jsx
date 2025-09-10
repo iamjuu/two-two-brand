@@ -28,8 +28,6 @@ const Footer = () => {
           {/* Company Information */}
           <div 
             className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
-            data-aos="fade-up"
-            data-aos-delay="100"
           >
             <div className="flex items-center mb-4 sm:mb-6">
               <img src={LogoWhite} alt="Cam Design Logo" className=" w-20" />
@@ -60,8 +58,6 @@ const Footer = () => {
           {/* Service */}
           <div 
             className="sm:col-span-1 lg:col-span-1 xl:col-span-1"
-            data-aos="fade-up"
-            data-aos-delay="200"
           >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Service</h2>
             <nav className="space-y-2 text-sm">
@@ -89,8 +85,6 @@ const Footer = () => {
           {/* Company */}
           <div 
             className="sm:col-span-1 lg:col-span-1 xl:col-span-1"
-            data-aos="fade-up"
-            data-aos-delay="300"
           >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Cam Design</h2>
             <nav className="space-y-2 text-sm">
@@ -118,8 +112,6 @@ const Footer = () => {
           {/* Our Social Media */}
           <div 
             className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
-            data-aos="fade-up"
-            data-aos-delay="400"
           >
             <h2 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Our Social Media</h2>
             <nav className="space-y-2 text-sm">
@@ -153,8 +145,6 @@ const Footer = () => {
           {/* Join a Newsletter */}
           <div 
             className="sm:col-span-2 lg:col-span-1 xl:col-span-1"
-            data-aos="fade-up"
-            data-aos-delay="500"
           >
             <h1 className="text-[#f97316] font-bold text-base sm:text-lg mb-3 sm:mb-4">Join a Newsletter</h1>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">

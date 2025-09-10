@@ -34,7 +34,7 @@ const About = () => {
             </h1>
             <p 
               className=" text-justify lg:text-start"
-              data-aos="fade-up"
+              data-aos="slide-up"
               data-aos-delay="200"
             >
               We are passionate interior designers dedicated to transforming your living 
@@ -44,7 +44,7 @@ const About = () => {
             </p>
             <p 
               className="text-justify lg:text-start"
-              data-aos="fade-up"
+              data-aos="fade"
               data-aos-delay="300"
             >
               With years of experience in residential and commercial interior design, 
@@ -54,7 +54,7 @@ const About = () => {
             </p>
             <p 
               className="text-justify lg:text-start"
-              data-aos="fade-up"
+              data-aos="slide-down"
               data-aos-delay="400"
             >
               Our comprehensive services include space planning, color consultation, 
@@ -73,7 +73,14 @@ const About = () => {
         {isLoading ? (
           <ShimmerImage height="h-80" className="rounded-lg" />
         ) : (
-          <img className=" rounded-lg  " src={Wall1} alt="img" />
+          <img 
+            className=" rounded-lg" 
+            src={Wall1} 
+            alt="img" 
+            data-aos="slide-down"
+            data-aos-delay="600"
+            data-aos-duration="800"
+          />
         )}
       </div>
     </div>
