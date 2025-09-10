@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import ImageModal from './ImageModal';
 
 const DesignModal = ({ isOpen, onClose, category, imageCollections }) => {
@@ -18,6 +19,14 @@ const DesignModal = ({ isOpen, onClose, category, imageCollections }) => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  // Reset image modal state when category changes
+  useEffect(() => {
+    if (isOpen && category) {
+      setIsImageModalOpen(false);
+      setCurrentImageIndex(0);
+    }
+  }, [isOpen, category]);
 
   if (!isOpen || !currentCategory) return null;
 
@@ -57,11 +66,11 @@ const DesignModal = ({ isOpen, onClose, category, imageCollections }) => {
       </button>
 
       {/* Modal Content */}
-      <div className="w-full max-w-7xl mx-auto bg-white min-h-screen">
+      <div className="w-full max-w-7xl mx-auto bg-black min-h-screen">
         {/* Header with title and close button for mobile */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-3 sm:hidden z-50">
+        <div className="sticky top-0 bg-black  border-b border-gray-200 px-4 py-3 sm:hidden z-50">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-900 capitalize">
+            <h2 className="text-lg font-semibold text-gray-50 capitalize">
               {category} Designs
             </h2>
             <button
@@ -125,6 +134,17 @@ const DesignModal = ({ isOpen, onClose, category, imageCollections }) => {
       />
     </div>
   );
+};
+
+DesignModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  category: PropTypes.string,
+  imageCollections: PropTypes.objectOf(
+    PropTypes.shape({
+      images: PropTypes.arrayOf(PropTypes.string).isRequired
+    })
+  ).isRequired
 };
 
 export default DesignModal;
