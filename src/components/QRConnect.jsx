@@ -156,7 +156,7 @@ const QRConnect = () => {
                   Share
                 </button>
                 
-                <button
+                {/* <button
                   onClick={() => window.open(qrValue, '_blank')}
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                 >
@@ -164,7 +164,7 @@ const QRConnect = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                   Test Link
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
