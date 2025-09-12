@@ -1,42 +1,45 @@
+import { BedroomImage2, BedroomImage5, KitchenImage2, LivingRoomImage2, Wall1 } from "../../../assets";
 import { AnimatedTestimonials } from "../../../ui/animated-testimonials/animated-testimonials";
 
 export function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+        "Exceptional craftsmanship and thoughtful design solutions. They truly understand how to create spaces that feel both elegant and comfortable.",
       name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      designation: "Property Developer at DataPro Living",
+      src: BedroomImage5,
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+        "The design process was smooth and the results exceeded our expectations. The team’s creativity and attention to detail are unmatched.",
+      name: "Michael Rodriguez",
+      designation: "Interior Designer at Urban Spaces",
+      src: Wall1,
+    },
+    {
+      quote:
+        "The new layout has significantly improved the functionality and ambiance of our office. The designs are modern yet practical.",
+      name: "Emily Watson",
+      designation: "Office Manager at CloudScale Interiors",
+      src: LivingRoomImage2,
+    },
+    {
+      quote:
+        "Exceptional craftsmanship and thoughtful design solutions. They truly understand how to create spaces that feel both elegant and comfortable.",
+      name: "James Kim",
+      designation: "Property Developer at DataPro Living",
+      src: BedroomImage2,
+    },
+    {
+      quote:
+        "The kitchen redesign brought new life to our home. The blend of aesthetics and functionality makes cooking and entertaining a joy every day.",
       name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      designation: "Kitchen Specialist at FutureNet Designs",
+      src: KitchenImage2,
     },
   ];
+  
+  
   return <AnimatedTestimonials testimonials={testimonials} />;
 }
